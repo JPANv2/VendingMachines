@@ -1,0 +1,17 @@
+Vending Machines introduces to terraria players shops without requiring an NPC. These shops are activated by right-clicking the vending machine tile (from relatively close to it).
+This mod includes a generic vending machine that can be built to provide shops for any NPC with a shop, including modded ones. To build them, you require iron,glass,wire, a switch and a Soul of <NPC>, which is obtained by killing a town NPC with a Soul Extractor sword.
+
+This mod is also meant as a base for people to build their own NPC-free shops, and includes an example "Easy Vending Machine" that can be copied to create your own vending machine.
+
+v1.2.0.1 ChangeLog
+Preliminary release for tmod 0.10, tested only with vanilla content. May be updated later if mod support broke.
+
+v1.2 Changelog
+- Soul extractor can now kill Vanilla Bound NPCs (and Tortured Soul Tax collector) and extract their Town NPC soul (exception being the Old Man/Clothier, for Reasons).
+- Added ATM (tax collector machine), Hair Dryer (Stylist hair styling machine) and Dye Ball Machine (Dye Trader Strange Plant trading).
+
+
+V1.1 changelog
+- Fixed Nurse removing quickstack and sort buttons from inventory
+- Added "Guide's Crafting Help Machine" and "Reforge Machine", which allow for recipe viewing and Reforging weapons respectively.
+-- These new recipes only appear if you have a "Soul of Guide" or "Soul of Goblin Tinkerer" with you, and while they say they can be crafted with any "Soul of NPC", they cannot.
