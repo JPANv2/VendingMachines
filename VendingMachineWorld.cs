@@ -247,12 +247,15 @@ namespace VendingMachines
             Load(TagIO.Read(reader));
         }
 
+        bool? previousDaytime = null;
         public override void PostUpdate()
         {
-            if(Main.time == 1 && Main.dayTime)
+            if (!previousDaytime.HasValue || (!previousDaytime.Value && Main.dayTime))
             {
                 Chest.SetupTravelShop();
             }
+            previousDaytime = Main.dayTime;
+            
             if(Main.time % 600 == 0)
             {
                 for (int i = 0; i < vm.Length; i++)

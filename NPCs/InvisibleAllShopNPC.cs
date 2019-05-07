@@ -17,7 +17,8 @@ namespace VendingMachines.NPCs
         public override void SetDefaults()
         {
 
-            npc.immortal = true;
+            //npc.immortal = true;
+            npc.friendly = true;
             //npc.townNPC = true;
             npc.height = 1;//64;
             npc.width = 1;// 48;
