@@ -10,6 +10,9 @@ namespace VendingMachines.NPCs
 {
     public class InvisibleAllShopNPC : ModNPC
     {
+
+        public static Chest shopChest = new Chest();
+
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("");
@@ -57,6 +60,15 @@ namespace VendingMachines.NPCs
                 }
             }
            // npc.velocity.Y = -10f;
+        }
+
+        public override void SetupShop(Chest shop, ref int nextSlot)
+        {
+            for(int k = 0; k < shopChest.item.Length && k < shop.item.Length; k++)
+            {
+                shop.item[k] = shopChest.item[k];
+                nextSlot++;
+            }
         }
 
     }

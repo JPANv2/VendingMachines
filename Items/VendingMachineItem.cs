@@ -166,7 +166,7 @@ namespace VendingMachines.Items
 
         }
 
-        public virtual bool SetupShop(Item[] shop)
+        public virtual bool SetupShop(Chest shop)
         {
             return false;
         }

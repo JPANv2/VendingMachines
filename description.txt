@@ -3,6 +3,12 @@ This mod includes a generic vending machine that can be built to provide shops f
 
 This mod is also meant as a base for people to build their own NPC-free shops, and includes an example "Easy Vending Machine" that can be copied to create your own vending machine.
 
+v1.2.1 Changelog
+Changed the way custom vending machines are implemented: they are now fully compatible with Shop Expander.
+Vending Machines' SetupShop now takes a Chest instead of an Item[], allowing for expanding the chest.item size. Items over the limit will not be displayed unless your have a mod that allows it.
+Added Icon.2.0.4 ChangeLog
+Trying and fixing bug with Shop Expander
+
 v1.2.0.3 ChangeLog
 Fixed a bug where the traveling salesman vending machine did not update with a new day.
 

@@ -232,11 +232,12 @@ namespace VendingMachines.Tiles
                         Main.playerInventory = true;
                         Main.InGuideCraftMenu = false;
                         Main.InReforgeMenu = false;
-                        for (int k = 0; k< Main.instance.shop[Main.npcShop].item.Length; k++)
+                        for (int k = 0; k< InvisibleAllShopNPC.shopChest.item.Length; k++)
                         {
-                            Main.instance.shop[Main.npcShop].item[k] = new Item();
+                            InvisibleAllShopNPC.shopChest.item[k] = new Item();
                         }
-                        vendor.SetupShop(Main.instance.shop[Main.npcShop].item);
+                        vendor.SetupShop(InvisibleAllShopNPC.shopChest);
+                        Main.instance.shop[Main.npcShop].SetupShop(mod.NPCType<InvisibleAllShopNPC>());
                     }
                 }
             }
@@ -249,7 +250,7 @@ namespace VendingMachines.Tiles
                 if (type == NPCID.TravellingMerchant)
                 {
                     Main.player[Main.myPlayer].chest = -1;
-                    Main.npcChatText = "";
+                    Main.npcChatText = "";                    
                     for (int k = 0; k < 40; k++)
                     {
                         if (Main.instance.shop[Main.npcShop].item[k] == null)

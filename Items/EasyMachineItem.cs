@@ -29,8 +29,9 @@ namespace VendingMachines.Items
             npcType = SoulOfNPC.ItemToTag(item);
         }
 
-        public override bool SetupShop(Item[] shop)
+        public override bool SetupShop(Chest shopChest)
         {
+            Item[] shop = shopChest.item;
             int i = 0;
             shop[i].SetDefaults(ItemID.LesserHealingPotion);
             i++;
