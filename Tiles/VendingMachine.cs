@@ -185,7 +185,7 @@ namespace VendingMachines.Tiles
 
 
         }
-        public override void RightClick(int i, int j)
+        public override bool NewRightClick(int i, int j)
         {
             
             
@@ -204,7 +204,7 @@ namespace VendingMachines.Tiles
             if (vmID < 0)
             {
                 Main.NewText("No vending Machine Found...");
-                return;
+                return false;
             }
 
             VendingMachineData vm = VendingMachineWorld.vm[vmID];
@@ -237,7 +237,7 @@ namespace VendingMachines.Tiles
                             InvisibleAllShopNPC.shopChest.item[k] = new Item();
                         }
                         vendor.SetupShop(InvisibleAllShopNPC.shopChest);
-                        Main.instance.shop[Main.npcShop].SetupShop(mod.NPCType<InvisibleAllShopNPC>());
+                        Main.instance.shop[Main.npcShop].SetupShop(ModContent.NPCType<InvisibleAllShopNPC>());
                     }
                 }
             }
@@ -293,7 +293,7 @@ namespace VendingMachines.Tiles
                                 k = -1;
                             }
                         }
-                        return;
+                        return true;
                     }
 
                 }
@@ -309,6 +309,7 @@ namespace VendingMachines.Tiles
                     Main.instance.shop[Main.npcShop].SetupShop(Main.npcShop < Main.MaxShopIDs - 1 ? Main.npcShop : type);
                 }
             }
+            return true;
 
         }
 
@@ -319,7 +320,7 @@ namespace VendingMachines.Tiles
             {
                 for (int i = Main.npc.Length -5; i >=0; i--)
                 {
-                    if (Main.npc[i].active && Main.npc[i].type == mod.NPCType<InvisibleAllShopNPC>() && (Main.npc[i].ai[0] == -1 || Main.npc[i].ai[0] == Main.myPlayer))
+                    if (Main.npc[i].active && Main.npc[i].type == ModContent.NPCType<InvisibleAllShopNPC>() && (Main.npc[i].ai[0] == -1 || Main.npc[i].ai[0] == Main.myPlayer))
                     {
                         Main.npc[i].ai[0] = Main.myPlayer;
                         Main.npc[i].Center = new Vector2(vm.x*16 + 24, vm.y*16 + 32);//Main.player[Main.myPlayer].Center;
@@ -333,7 +334,7 @@ namespace VendingMachines.Tiles
                     if (!Main.npc[i].active)
                     {
                         Main.npc[i] = new Terraria.NPC();
-                        Main.npc[i].SetDefaults(mod.NPCType<InvisibleAllShopNPC>());
+                        Main.npc[i].SetDefaults(ModContent.NPCType<InvisibleAllShopNPC>());
                         Main.npc[i].ai[0] = Main.myPlayer;
                         Main.npc[i].Center = new Vector2(vm.x * 16 + 24, vm.y * 16 + 32);//Main.player[Main.myPlayer].Center;
                        // Main.npc[i].name = "";

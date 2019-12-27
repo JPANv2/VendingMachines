@@ -14,7 +14,7 @@ namespace VendingMachines.Tiles
         public override void SetDefaults()
         {
             base.SetDefaults();
-            dropID = mod.ItemType<DyeBallMachineItem>();
+            dropID = ModContent.ItemType<DyeBallMachineItem>();
         }
 
         public override void VendingMachineMapEntry()

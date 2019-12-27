@@ -25,7 +25,7 @@ namespace VendingMachines.Items
 
         public override int ConsumeItem(int type, int numRequired)
         {
-            if(type == mod.ItemType<SoulOfNPC>())
+            if(type == ModContent.ItemType<SoulOfNPC>())
             {
                 for(int i = 0; i < 58; i++)
                 {
@@ -73,7 +73,7 @@ namespace VendingMachines.Items
             item.width = 20;
             item.height = 20;
 
-            item.createTile = mod.TileType<VendingMachine>();
+            item.createTile = ModContent.TileType<VendingMachine>();
             //item.placeStyle = 0;
             item.rare = 3;
         }

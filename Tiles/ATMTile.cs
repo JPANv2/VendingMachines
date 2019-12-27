@@ -16,7 +16,7 @@ namespace VendingMachines.Tiles
         public override void SetDefaults()
         {
             base.SetDefaults();
-            dropID = mod.ItemType<ATMItem>();
+            dropID = ModContent.ItemType<ATMItem>();
         }
 
         public override void VendingMachineTileStyle()

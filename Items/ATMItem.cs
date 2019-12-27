@@ -25,7 +25,7 @@ namespace VendingMachines.Items
         {
             base.SetDefaults();
             item.maxStack = 99;
-            item.createTile = mod.TileType<ATMTile>();
+            item.createTile = ModContent.TileType<ATMTile>();
             hasShop = true;
             npcType = SoulOfNPC.ItemToTag(item);
         }
@@ -112,7 +112,7 @@ namespace VendingMachines.Items
                 taxSoulSlot = -1;
                 for (int i = 0; i < 58; i++)
                 {
-                    if (Main.player[Main.myPlayer].inventory[i].type == mod.ItemType<SoulOfNPC>())
+                    if (Main.player[Main.myPlayer].inventory[i].type == ModContent.ItemType<SoulOfNPC>())
                     {
                         if (((SoulOfNPC)(Main.player[Main.myPlayer].inventory[i].modItem)).npcType == "" + NPCID.TaxCollector)
                         {
@@ -126,7 +126,7 @@ namespace VendingMachines.Items
 
             public override int ConsumeItem(int type, int numRequired)
             {
-                if (type == mod.ItemType<SoulOfNPC>())
+                if (type == ModContent.ItemType<SoulOfNPC>())
                 {
                     return 0;
                 }
@@ -149,7 +149,7 @@ namespace VendingMachines.Items
             recipe.AddIngredient(ItemID.Wire, 10);
             recipe.AddIngredient(ItemID.Switch, 1);
             Item itm = new Item();
-            itm.SetDefaults(mod.ItemType<SoulOfNPC>());
+            itm.SetDefaults(ModContent.ItemType<SoulOfNPC>());
             (itm.modItem as SoulOfNPC).npcType = "" + NPCID.TaxCollector;
             recipe.AddIngredient(itm.modItem);
             recipe.anyIronBar = true;

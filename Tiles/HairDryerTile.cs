@@ -17,7 +17,7 @@ namespace VendingMachines.Tiles
         public override void SetDefaults()
         {
             base.SetDefaults();
-            dropID = mod.ItemType<HairDryerItem>();
+            dropID = ModContent.ItemType<HairDryerItem>();
         }
 
         public override void VendingMachineTileStyle()

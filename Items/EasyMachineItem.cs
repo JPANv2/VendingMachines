@@ -24,7 +24,7 @@ namespace VendingMachines.Items
             base.SetDefaults();
            
             item.maxStack = 99;
-            item.createTile = mod.TileType<EasyMachineTile>();
+            item.createTile = ModContent.TileType<EasyMachineTile>();
             hasShop = true;
             npcType = SoulOfNPC.ItemToTag(item);
         }

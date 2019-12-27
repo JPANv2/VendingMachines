@@ -13,7 +13,7 @@ namespace VendingMachines.Tiles
         public override void SetDefaults()
         {
             base.SetDefaults();
-            dropID = mod.ItemType<GuideMachineItem>();
+            dropID = ModContent.ItemType<GuideMachineItem>();
         }
 
         public override void VendingMachineMapEntry()
